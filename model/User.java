@@ -6,6 +6,7 @@ import java.util.Objects;
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    private double rating;
     private int id;
     private String firstName;
     private String lastName;
@@ -19,12 +20,14 @@ public class User implements Serializable {
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+        this.rating=0;
     }
 
     public User(int id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.rating=0;
     }
 
     public User(String firstName, String lastName, String username, String password) {
@@ -32,6 +35,7 @@ public class User implements Serializable {
         this.lastName = lastName;
         this.username = username;
         this.password = password;
+        this.rating=0;
     }
 
     public User(int id, String firstName, String lastName, String username, String password) {
@@ -40,6 +44,7 @@ public class User implements Serializable {
         this.lastName = lastName;
         this.username = username;
         this.password = password;
+        this.rating=0;
     }
 
     public User(int id, String firstName, String lastName, String username, String password, String salt) {
@@ -49,8 +54,13 @@ public class User implements Serializable {
         this.username = username;
         this.password = password;
         this.salt = salt;
+        this.rating=0;
     }
 
+    public double getRating(){
+        return rating;
+    }
+    
     public int getId() {
         return id;
     }
@@ -75,6 +85,10 @@ public class User implements Serializable {
         return salt;
     }
 
+    public void setRating(double rating){
+        this.rating=rating;
+    }
+    
     public void setSalt(String salt) {
         this.salt = salt;
     }
